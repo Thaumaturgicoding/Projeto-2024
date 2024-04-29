@@ -1,0 +1,33 @@
+<!-- views/addGoal.ejs - Página para adicionar novas metas de redução de tabaco -->
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <title>Adicionar Meta - Rastreador de Tabaco</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="/js/goalForm.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Adicionar Nova Meta</h1>
+        <nav>
+            <ul>
+                <li><a href="/dashboard">Dashboard</a></li>
+                <li><a href="/logout">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <form id="goalForm">
+            <label for="targetSmokesPerDay">Meta de cigarros por dia:</label>
+            <input type="number" id="targetSmokesPerDay" name="targetSmokesPerDay" required>
+            <label for="targetDate">Data para alcançar a meta:</label>
+            <input type="date" id="targetDate" name="targetDate" required>
+            <button type="submit">Adicionar Meta</button>
+        </form>
+    </main>
+    <footer>
+        <p>&copy; 2024 Rastreador de Tabaco. Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>

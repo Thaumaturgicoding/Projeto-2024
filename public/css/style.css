@@ -32,3 +32,30 @@ main {
     padding: 20px;
     text-align: center;
 }
+
+/* public/css/style.css - Estilos adicionais para abas no dashboard */
+.tab {
+    padding: 10px;
+    border: none;
+    background-color: #eee;
+    cursor: pointer;
+}
+
+.tab.active {
+    background-color: #ccc;
+}
+
+.tab-content {
+    padding: 20px;
+    border: 1px solid #ccc;
+    margin-top: 10px;
+    display: none;
+}
+
+.tab-content.hidden {
+    display: none;
+}
+
+.tab-content:not(.hidden) {
+    display: block;
+}

@@ -1,28 +1,39 @@
-<!-- views/dashboard.ejs - Página do dashboard do usuário -->
+<!-- views/dashboard.ejs - Dashboard com abas para diferentes seções -->
 <!DOCTYPE html>
 <html lang="pt">
 <head>
     <meta charset="UTF-8">
     <title>Dashboard - Rastreador de Tabaco</title>
     <link rel="stylesheet" href="/css/style.css">
+    <script src="/js/dashboard.js" defer></script>
 </head>
 <body>
     <header>
-        <h1>Dashboard</h1>
+        <h1>Dashboard do Usuário</h1>
         <nav>
             <ul>
-                <li><a href="/logout">Logout</a></li>
+                <li><a href="/records">Ver Registros</a></li>
+                <li><a href="/goals">Ver Metas</a></li>
+                <li><a href="/progress">Ver Progresso</a></li>
+                <li><a href="/logout" id="logoutButton">Logout</a></li>
             </ul>
         </nav>
     </header>
     <main>
-        <h2>Bem-vindo, <%= user.username %>!</h2>
-        <p>Última sessão em: <%= user.updatedAt.toDateString() %></p>
-        <div>
-            <h3>Seu progresso</h3>
-            <p>Parou de fumar em: <%= user.quitDate.toDateString() %></p>
-            <p>Cigarros por dia: <%= user.dailySmokes %></p>
+        <div class="tabs">
+            <button class="tab" data-target="#records">Registros</button>
+            <button class="tab" data-target="#goals">Metas</button>
+            <button class="tab" data-target="#progress">Progresso</button>
         </div>
+        <section id="records" class="tab-content hidden">
+            <!-- Conteúdo dinâmico de registros -->
+        </section>
+        <section id="goals" class="tab-content hidden">
+            <!-- Conteúdo dinâmico de metas -->
+        </section>
+        <section id="progress" class="tab-content hidden">
+            <!-- Conteúdo dinâmico de progresso -->
+        </section>
     </main>
     <footer>
         <p>&copy; 2024 Rastreador de Tabaco. Todos os direitos reservados.</p>

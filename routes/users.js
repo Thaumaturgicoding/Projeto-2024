@@ -33,4 +33,17 @@ router.get('/logout', (req, res) => {
 });
 
 
+// routes/users.js - Refatoração da rota de logout para melhor integração com o frontend
+router.get('/logout', (req, res) => {
+    req.session.destroy(err => {
+        if (err) {
+            console.error('Erro ao deslogar:', err);
+            res.status(500).send('Erro ao deslogar.');
+        } else {
+            res.redirect('/');
+        }
+    });
+});
+
+
 module.exports = router;

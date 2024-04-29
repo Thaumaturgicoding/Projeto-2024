@@ -47,3 +47,12 @@ app.use('/records', recordRoutes);
 // app.js - Integrando a rota de progresso
 const progressRoutes = require('./routes/progress');
 app.use('/progress', progressRoutes);
+
+// app.js - Integrando a rota de metas
+const goalsRoutes = require('./routes/goals');
+app.use('/goals', goalsRoutes);
+
+// routes/goals.js - Adicionando rota para a página de adição de metas
+router.get('/add', isAuthenticated, (req, res) => {
+    res.render('addGoal');
+});

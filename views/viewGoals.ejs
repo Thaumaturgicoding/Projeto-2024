@@ -1,0 +1,24 @@
+<!-- views/viewGoals.ejs - Página para visualizar as metas estabelecidas pelo usuário -->
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <title>Visualizar Metas - Rastreador de Tabaco</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Visualizar Metas</h1>
+        <nav>
+            <ul>
+                <li><a href="/dashboard">Dashboard</a></li>
+                <li><a href="/logout">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h2>Suas Metas de Redução</h2>
+        <% if (goals.length > 0) { %>
+            <ul>
+                <% goals.forEach(goal => { %>
+                    <li>Meta: <%= goal.targetSmokesPerDay %> cigarros até <%= goal.targetDate.toDateString() %

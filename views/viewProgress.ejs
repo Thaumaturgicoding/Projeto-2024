@@ -1,0 +1,38 @@
+<!-- views/viewProgress.ejs - Página para visualizar o progresso do usuário -->
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <title>Seu Progresso - Rastreador de Tabaco</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Seu Progresso</h1>
+        <nav>
+            <ul>
+                <li><a href="/dashboard">Dashboard</a></li>
+                <li><a href="/logout">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <% if (progress) { %>
+            <h2>Progresso desde <%= progress.startDate.toDateString() %></h2>
+            <p>Meta inicial de consumo diário: <%= progress.initialSmokesPerDay %> cigarros</p>
+            <p>Consumo atual: <%= progress.currentSmokesPerDay %> cigarros por dia</p>
+            <h3>Marcos alcançados:</h3>
+            <ul>
+                <% progress.milestones.forEach(milestone => { %>
+                    <li><%= milestone.date.toDateString() %>: <%= milestone.smokesPerDay %> cigarros</li>
+                <% }); %>
+            </ul>
+        <% } else { %>
+            <p>Você ainda não começou a registrar seu progresso.</p>
+        <% } %>
+    </main>
+    <footer>
+        <p>&copy; 2024 Rastreador de Tabaco. Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>

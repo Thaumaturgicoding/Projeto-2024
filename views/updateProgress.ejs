@@ -1,0 +1,33 @@
+<!-- views/updateProgress.ejs - Página para atualizar o progresso do usuário -->
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <title>Atualizar Progresso - Rastreador de Tabaco</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="/js/progressForm.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Atualizar Progresso</h1>
+        <nav>
+            <ul>
+                <li><a href="/dashboard">Dashboard</a></li>
+                <li><a href="/logout">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <form id="progressForm">
+            <label for="currentSmokesPerDay">Número atual de cigarros por dia:</label>
+            <input type="number" id="currentSmokesPerDay" name="currentSmokesPerDay" required>
+            <label for="milestoneDate">Data do marco:</label>
+            <input type="date" id="milestoneDate" name="milestoneDate" required>
+            <button type="submit">Atualizar Progresso</button>
+        </form>
+    </main>
+    <footer>
+        <p>&copy; 2024 Rastreador de Tabaco. Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>

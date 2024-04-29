@@ -1,0 +1,31 @@
+<!-- views/addRecord.ejs - Página para adicionar novos registros de consumo -->
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <title>Adicionar Registro - Rastreador de Tabaco</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="/js/recordForm.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Adicionar Novo Registro de Consumo</h1>
+        <nav>
+            <ul>
+                <li><a href="/dashboard">Dashboard</a></li>
+                <li><a href="/logout">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <form id="recordForm">
+            <label for="smokesCount">Número de cigarros fumados hoje:</label>
+            <input type="number" id="smokesCount" name="smokesCount" required>
+            <button type="submit">Adicionar Registro</button>
+        </form>
+    </main>
+    <footer>
+        <p>&copy; 2024 Rastreador de Tabaco. Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>

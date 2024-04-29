@@ -1,0 +1,35 @@
+<!-- views/records.ejs - Página para visualizar registros de consumo -->
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <title>Registros de Consumo - Rastreador de Tabaco</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Registros de Consumo</h1>
+        <nav>
+            <ul>
+                <li><a href="/dashboard">Dashboard</a></li>
+                <li><a href="/logout">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h2>Seus Registros</h2>
+        <% if (records.length > 0) { %>
+            <ul>
+                <% records.forEach(record => { %>
+                    <li>Data: <%= record.date.toDateString() %>, Cigarros: <%= record.smokesCount %></li>
+                <% }); %>
+            </ul>
+        <% } else { %>
+            <p>Você ainda não adicionou nenhum registro.</p>
+        <% } %>
+    </main>
+    <footer>
+        <p>&copy; 2024 Rastreador de Tabaco. Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>

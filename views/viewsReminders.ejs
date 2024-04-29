@@ -1,0 +1,34 @@
+<!-- views/viewReminders.ejs - Página para visualizar lembretes -->
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <title>Lembretes - Rastreador de Tabaco</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Lembretes</h1>
+        <nav>
+            <ul>
+                <li><a href="/dashboard">Dashboard</a></li>
+                <li><a href="/logout">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <% if (reminders.length > 0) { %>
+            <ul>
+                <% reminders.forEach(reminder => { %>
+                    <li>Lembrete: <%= reminder.message %>, Data: <%= reminder.remindOn.toISOString().substring(0, 10) %></li>
+                <% }); %>
+            </ul>
+        <% } else { %>
+            <p>Nenhum lembrete programado.</p>
+        <% } %>
+    </main>
+    <footer>
+        <p>&copy; 2024 Rastreador de Tabaco. Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>

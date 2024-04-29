@@ -45,5 +45,22 @@ router.get('/logout', (req, res) => {
     });
 });
 
+// routes/users.js - Adicionando rota para atualizar configurações do usuário
+router.post('/settings', isAuthenticated, (req, res) => {
+    const { email, password } = req.body;
+    User.findByIdAndUpdate(req.session.user._id, { email, password }, { new: true })
+        .then(user => {
+            if (!user) {
+                res.status(404).send('Usuário não encontrado.');
+            } else {
+                res.send('Configurações atualizadas com sucesso.');
+            }
+        })
+        .catch(err => {
+            console.error('Erro ao atualizar usuário:', err);
+            res.status(500).send('Erro ao atualizar configurações.');
+        });
+});
+
 
 module.exports = router;

@@ -1,0 +1,33 @@
+<!-- views/settings.ejs - Página para gerenciar configurações do usuário -->
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <title>Configurações - Rastreador de Tabaco</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="/js/settings.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Configurações do Usuário</h1>
+        <nav>
+            <ul>
+                <li><a href="/dashboard">Dashboard</a></li>
+                <li><a href="/logout">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <form id="settingsForm">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <label for="password">Nova Senha:</label>
+            <input type="password" id="password" name="password">
+            <button type="submit">Atualizar Configurações</button>
+        </form>
+    </main>
+    <footer>
+        <p>&copy; 2024 Rastreador de Tabaco. Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>

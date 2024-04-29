@@ -1,0 +1,28 @@
+<!-- views/progressChart.ejs - Página para exibir o gráfico de progresso -->
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <title>Gráfico de Progresso - Rastreador de Tabaco</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="/js/progressVisualization.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Gráfico de Progresso</h1>
+        <nav>
+            <ul>
+                <li><a href="/dashboard">Dashboard</a></li>
+                <li><a href="/logout">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <canvas id="progressChart"></canvas>
+    </main>
+    <footer>
+        <p>&copy; 2024 Rastreador de Tabaco. Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>

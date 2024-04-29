@@ -34,4 +34,23 @@ router.get('/', isAuthenticated, (req, res) => {
         .catch(err => res.status(500).send('Erro ao recuperar as metas.'));
 });
 
+// routes/goals.js - Rota para fornecer dados de metas em formato JSON
+router.get('/data', isAuthenticated, (req, res) => {
+    Goal.find({ userId: req.session.user._id })
+        .select('targetDate targetSmokesPerDay -_id')
+        .sort('targetDate')
+        .then(goals => {
+            const data = {
+                dates: goals.map(g => g.targetDate.toISOString().substring(0, 10)),
+                targetSmokesPerDay: goals.map(g => g.targetSmokesPerDay)
+            };
+            res.json(data);
+        })
+        .catch(err => {
+            console.error('Erro ao recuperar dados de metas:', err);
+            res.status(500).json({ message: 'Erro ao recuperar dados de metas' });
+        });
+});
+
+
 module.exports = router;

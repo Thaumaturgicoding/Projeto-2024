@@ -45,4 +45,23 @@ router.post('/update', isAuthenticated, (req, res) => {
         });
 });
 
+// routes/progress.js - Rota para fornecer dados de progresso em formato JSON
+router.get('/data', isAuthenticated, (req, res) => {
+    Progress.find({ userId: req.session.user._id })
+        .select('date smokesPerDay -_id')
+        .sort('date')
+        .then(progressRecords => {
+            const data = {
+                dates: progressRecords.map(pr => pr.date.toISOString().substring(0, 10)),
+                smokesPerDay: progressRecords.map(pr => pr.smokesPerDay)
+            };
+            res.json(data);
+        })
+        .catch(err => {
+            console.error('Erro ao recuperar dados de progresso:', err);
+            res.status(500).json({ message: 'Erro ao recuperar dados de progresso' });
+        });
+});
+
+
 module.exports = router;

@@ -1,0 +1,29 @@
+<!-- views/feedback.ejs - Página para enviar feedback -->
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <title>Enviar Feedback - Rastreador de Tabaco</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Enviar Feedback</h1>
+        <nav>
+            <ul>
+                <li><a href="/dashboard">Dashboard</a></li>
+                <li><a href="/logout">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <form action="/feedback/submit" method="POST">
+            <textarea name="content" rows="5" cols="30" required></textarea>
+            <button type="submit">Enviar Feedback</button>
+        </form>
+    </main>
+    <footer>
+        <p>&copy; 2024 Rastreador de Tabaco. Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>

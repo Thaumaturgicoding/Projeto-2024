@@ -56,3 +56,7 @@ app.use('/goals', goalsRoutes);
 router.get('/add', isAuthenticated, (req, res) => {
     res.render('addGoal');
 });
+
+// app.js - Integrando a rota de feedback
+const feedbackRoutes = require('./routes/feedback');
+app.use('/feedback', feedbackRoutes);
